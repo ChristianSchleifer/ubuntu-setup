@@ -114,6 +114,21 @@ mkdir -p ~/dotfiles-backup
 ln -s "$(pwd)/src/git/.gitconfig" ~/.gitconfig
 ```
 
+## Configuring nvim
+
+```bash
+# Install plug
+# https://github.com/junegunn/vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       
+# Set up neovim config
+mkdir -p ~/dotfiles-backup
+mkdir -p ~/.config/nvim
+[ -f ~/.config/nvim/init.vim ] && mv ~/.config/nvim/init.vim ~/dotfiles-backup/init.vim
+ln -s "$(pwd)/src/nvim/init.vim" ~/.config/nvim/init.vim
+```
+
 ## Miscellaneous
 
 ```bash
