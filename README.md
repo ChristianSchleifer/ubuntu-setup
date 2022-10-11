@@ -129,6 +129,25 @@ mkdir -p ~/.config/nvim
 ln -s "$(pwd)/src/nvim/init.vim" ~/.config/nvim/init.vim
 ```
 
+## Installing Obsidian and mounting Google Drive
+
+```bash
+# Install Obsidian 
+# https://obsidian.md/download
+
+# Mounting Google Drive
+# https://github.com/astrada/google-drive-ocamlfuse
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt update
+sudo apt install google-drive-ocamlfuse
+
+google-drive-ocamlfuse
+mkdir -p ~/Documents/GoogleDrive
+google-drive-ocamlfuse ~/Documents/GoogleDrive
+
+echo "google-drive-ocamlfuse ~/Documents/GoogleDrive" >> ~/.profile
+```
+
 ## Miscellaneous
 
 ```bash
