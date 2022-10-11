@@ -77,6 +77,11 @@ ln -s "$(pwd)/src/zsh/.zsh_functions" ~/.zsh_functions
 mkdir -p ~/dotfiles-backup
 [ -f ~/.tmux.conf ] && mv ~/.tmux.conf ~/dotfiles-backup/.tmux.conf
 ln -s "$(pwd)/src/tmux/.tmux.conf" ~/.tmux.conf
+
+# Set up fzf as fuzzy finder
+# https://github.com/junegunn/fzf#installation
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 ```
 
 ## Setting up i3
@@ -94,6 +99,12 @@ ln -s "$(pwd)/src/i3/i3blocks/config" ~/.config/i3/i3blocks/config
 ln -s "$(pwd)/src/i3/i3blocks/cpu/cpu_info.sh" ~/.config/i3/i3blocks/cpu/cpu_info.sh
 ```
 
+## Switching capslock and escape for better VIM experience
+
+```bash
+echo "setxkbmap -option caps:swapescape" >> ~/.profile
+```
+
 ## Configuring git
 
 ```bash
@@ -103,8 +114,13 @@ mkdir -p ~/dotfiles-backup
 ln -s "$(pwd)/src/git/.gitconfig" ~/.gitconfig
 ```
 
-## Switching capslock and escape for better VIM experience
+## Miscellaneous
 
 ```bash
-echo "setxkbmap -option caps:swapescape" >> ~/.profile
+# Enable better bluetooth control
+sudo apt install blueman 
+
+# Enable better sound controls
+sudo apt install pavucontrol
 ```
+
