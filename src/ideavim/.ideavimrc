@@ -1,0 +1,82 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader><leader> <Action>(GotoFile)
+map <leader>pp <Action>(ManageRecentProjects)
+map <leader>ot <Action>(ActivateTerminalToolWindow)
+
+map <leader>l <Action>(NextTab)
+map <leader>h <Action>(PreviousTab)
+map <leader>q <Action>(CloseContent)
+
+map <leader>ww <Action>(SwitcherForward)
+map <leader>wl <Action>(NextSplitter)
+map <leader>wh <Action>(PrevSplitter)
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>- <Action>(Unsplit)
+map <leader>wH <Action>(MoveEditorToOppositeTabGroup)
+map <leader>wL <Action>(MoveEditorToOppositeTabGroup)
+
+map <leader>ge <Action>(ShowErrorDescription)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>fr <Action>(RecentFiles)
+
+map <leader>cc <Action>(CommentByLineComment)
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+noremap <leader>x :action HideAllWindows<CR>
+
+""" Plugins  --------------------------------
+
+Plug 'terryma/vim-multiple-cursors'
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+""" NERDTree
+Plug 'https://github.com/preservim/nerdtree'
+
+map <leader>op :NERDTreeFocus<CR>
+map <leader>of :NERDTreeFind<CR>
+
+""" Multiple-Cursors
+Plug 'https://github.com/terryma/vim-multiple-cursors'
+map <leader>d <Plug>(NextWholeOccurrence)
+
+""" End of Plugins  --------------------------------

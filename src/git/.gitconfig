@@ -1,0 +1,17 @@
+[user]
+	name = Christian Schleifer 
+	email = chr.schleifer@gmail.com
+
+[pull]
+	rebase = true
+
+[core]
+	autocrlf = input
+
+[alias]
+	rank = shortlog -sn --no-merges
+    ls = log --abbrev-commit --graph --decorate --no-merges --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    lsm = log --abbrev-commit --graph --decorate --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    lsa = log --abbrev-commit --graph --all --decorate --no-merges --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    lsma = log --abbrev-commit --graph --all --decorate --pretty=format:"%C(yellow)%h%C(cyan)%d\\ %Creset%s%C(cyan)\\ [%cn]"
+    co = checkout

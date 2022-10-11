@@ -1,0 +1,13 @@
+# Change directory typo alias
+alias cd..='cd ..'
+
+# Alias's for multiple directory listing commands
+alias ls='ls -F -h --color=always -v --author --time-style=long-iso'
+alias ll='ls -ltarF' # long listing format
+
+# Aliases for switching java versions
+alias java8='sudo update-java-alternatives -s zulu8-ca-amd64 && export JAVA_HOME=/usr/lib/jvm/zulu8-ca-amd64 && export PATH=$PATH:$JAVA_HOME'
+alias java11='sudo update-java-alternatives -s zulu11-ca-amd64 && export JAVA_HOME=/usr/lib/jvm/zulu11-ca-amd64 && export PATH=$PATH:$JAVA_HOME'
+
+# Make Python3 default
+alias python='python3'
